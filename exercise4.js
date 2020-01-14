@@ -1,7 +1,6 @@
 function cariModus(arr) {
     let finalArr = [];
     for(i=0;i<arr.length;i++){
-      let currentArr = [];
       let numberOfTimes = 0;
       let number = arr[i];
       for(j=0;j<arr.length;j++){
@@ -10,8 +9,7 @@ function cariModus(arr) {
         }
         
       }
-      currentArr.push(arr[i],numberOfTimes);
-      finalArr.push(currentArr);
+      finalArr.push([arr[i],numberOfTimes]);
     }
    let result = 0;
    let occurence = 1;
