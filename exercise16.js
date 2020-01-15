@@ -1,33 +1,17 @@
 function graduates (students) {
     var newObj = {};
     for(i=0;i<students.length;i++){
-        if(newObj[students[i]['class']]=== undefined) {
+        if(newObj[students[i]['class']] === undefined) {
             newObj[students[i]['class']] = [];
+        } 
+        if (students[i].score > 75) {
+          newObj[students[i]['class']].push({
+              name: students[i].name,
+              score: students[i].score
+          })
         }
-        newObj[students[i]['class']].push({
-            name: students[i].name,
-            score: students[i].score
-        })
-    }
-    // console.log(newObj);
-    finalObj = {};
-    graduates = [];
-
-    for(x in newObj){
-        var name = ''
-        for(i=0;i<newObj[x].length;i++){
-            if (newObj[x][i].score > 75 ){
-            graduates.push(
-                newObj[x] = {
-                 name: newObj[x][i].name,
-                 passingScore: newObj[x][i].score
-                }
-            );
-            }
-        }
-            
-    }
-    return graduates
+      }
+      return newObj;
   }
   
   console.log(graduates([
